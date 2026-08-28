@@ -53,3 +53,76 @@ Backuo
 ## MySQL for Azure
 
 Auto Scaling and Load Balancing
+
+Horizontal Scaling
+
+Vertical Scaling
+
+
+
+
+
+
+
+portal.azure.com
+Management Groups
+
+
+Subscriptions
+Billing (Invoice + Payment Methods)
+
+Resource Groups
+Resources
+
+
+## Ms Entra ID (Azure AD),
+Users
+Groups
+Service Principles
+
+
+Roles
+Owner
+Contributer
+Reader
+
+## Azure Key Vault
+
+
+## Compute and Containers
+
+- VMs
+shutting down / deallocating
+
+- Serverless
+
+- Azure Kubernetes Services
+
+- Azure Container Apps
+
+- Azure Container Instances
+
+- Azure App Services
+
+- Azue Batch
+
+
+## Storage Databases
+
+- Blob Storage
+    - Hot
+    - Cool
+    - Cold
+    - Archive
+
+- Azure Managed Disks
+> Block Storage
+    - Standard HDD
+    - Standard SSD
+    - Premium SSD
+    - Ultra Disk
+- Azure Files
+> Shared 
+
+- Azure Net App Files
+

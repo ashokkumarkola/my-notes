@@ -55,7 +55,6 @@ git diff
 git diff --staged
 ```
 
-
 ---
 
 ## 4. Basic Git Flow
@@ -81,7 +80,7 @@ Remote Repository
 ## 5. Add Changes
 
 ```bash
-> Add all changes.
+# Add all changes.
 git add .
 
 git add filename
@@ -140,6 +139,7 @@ git branch -d <branch>
 git branch -D <branch>
 
 ```
+
 ---
 
 ## 8. Merge
@@ -157,9 +157,7 @@ git merge --abort
 git branch --merged
 ```
 
-
 ---
-
 
 ## 9. Remote Repository
 
@@ -177,9 +175,7 @@ git remote remove origin
 git remote rename origin upstream
 ```
 
-
 ---
-
 
 ## 10. Push
 
@@ -205,94 +201,59 @@ git push origin --delete <branch>
 ## 11. Pull
 
 ```bash
+# Fetch + integrate remote changes.
 git pull
-```
 
-> Fetch + integrate remote changes.
-
-```bash
+# Pull specific branch.
 git pull origin main
-```
 
-> Pull specific branch.
-
-```bash
+# Pull using rebase instead of merge.
 git pull --rebase
 ```
-
-> Pull using rebase instead of merge.
 
 ---
 
 ## 12. Fetch
 
 ```bash
+# Download remote changes without merging.
 git fetch
-```
 
-> Download remote changes without merging.
-
-```bash
 git fetch origin
-```
 
-```bash
+# Fetch from all remotes.
 git fetch --all
 ```
-
-> Fetch from all remotes.
 
 ---
 
 ## 13. Stash
 
 ```bash
+# Temporarily save uncommitted changes.
 git stash
-```
 
-> Temporarily save uncommitted changes.
-
-```bash
+# Save stash with a name.
 git stash push -m "message"
-```
 
-> Save stash with a name.
-
-```bash
+# List stashes.
 git stash list
-```
 
-> List stashes.
-
-```bash
+# Apply latest stash + remove it.
 git stash pop
-```
 
-> Apply latest stash + remove it.
-
-```bash
+# Apply latest stash without removing it.
 git stash apply
-```
 
-> Apply latest stash without removing it.
-
-```bash
+# Apply specific stash.
 git stash apply stash@{0}
-```
 
-> Apply specific stash.
-
-```bash
+# Delete specific stash.
 git stash drop stash@{0}
-```
 
-> Delete specific stash.
-
-```bash
+# Delete all stashes.
 git stash clear
 ```
-
-> Delete all stashes.
 
 ---
 
@@ -301,54 +262,37 @@ git stash clear
 ### Unstage File
 
 ```bash
+# Remove file from staging.
 git restore --staged filename
 ```
-
-> Remove file from staging.
-
----
 
 ### Discard File Changes
 
 ```bash
+# Discard uncommitted changes.
 git restore filename
 ```
 
-> Discard uncommitted changes.
-
 ```bash
+# Discard all working-directory changes.
 git restore .
 ```
-
-> Discard all working-directory changes.
-
----
 
 ### Reset
 
 ```bash
+# Unstage changes.
 git reset
-```
 
-> Unstage changes.
-
-```bash
+# Undo commit, keep changes staged.
 git reset --soft HEAD~1
-```
 
-> Undo commit, keep changes staged.
-
-```bash
+# Undo commit, keep changes unstaged.
 git reset --mixed HEAD~1
-```
 
-> Undo commit, keep changes unstaged.
-
-```bash
+# Undo commit and discard changes.
 git reset --hard HEAD~1
 ```
-
-> Undo commit and discard changes.
 
 > ⚠️ **Be careful with `--hard`.**
 
@@ -357,113 +301,80 @@ git reset --hard HEAD~1
 ## 15. Revert
 
 ```bash
+# Create a new commit that reverses another commit.
 git revert <commit>
-```
 
-> Create a new commit that reverses another commit.
-
-```bash
+# Revert latest commit.
 git revert HEAD
 ```
 
-> Revert latest commit.
-
+```md
 > **Reset** → changes history
 > **Revert** → safely creates an opposite commit
+```
 
 ---
 
 ## 16. Remove Files
 
 ```bash
+# Delete file + stage deletion.
 git rm filename
-```
 
-> Delete file + stage deletion.
-
-```bash
+# Delete folder + stage deletion.
 git rm -r folder/
-```
 
-> Delete folder + stage deletion.
-
-```bash
+# Remove from Git but keep local file.
 git rm --cached filename
 ```
-
-> Remove from Git but keep local file.
 
 ---
 
 ## 17. Rename / Move
 
 ```bash
+# Rename or move a tracked file.
 git mv oldname newname
 ```
-
-> Rename or move a tracked file.
 
 ---
 
 ## 18. Remote Branches
 
 ```bash
+# List remote branches.
 git branch -r
-```
 
-> List remote branches.
-
-```bash
+# Create local branch tracking remote branch.
 git switch --track origin/<branch>
-```
 
-> Create local branch tracking remote branch.
-
-```bash
+# Show branch tracking information.
 git branch -vv
 ```
-
-> Show branch tracking information.
 
 ---
 
 ## 19. Tags
 
 ```bash
+# List tags.
 git tag
-```
 
-> List tags.
-
-```bash
+# Create tag.
 git tag v1.0.0
-```
 
-> Create tag.
-
-```bash
+# Create annotated tag.
 git tag -a v1.0.0 -m "Release 1.0.0"
-```
 
-> Create annotated tag.
-
-```bash
+# Push tag.
 git push origin v1.0.0
-```
 
-> Push tag.
-
-```bash
+# Push all tags.
 git push origin --tags
-```
 
-> Push all tags.
-
-```bash
+# Delete local tag.
 git tag -d v1.0.0
 ```
-
-> Delete local tag.
 
 ---
 
@@ -490,38 +401,29 @@ build/
 ## 21. Search History
 
 ```bash
+# Show file history.
 git log -- filename
-```
 
-> Show file history.
-
-```bash
+# Show who changed each line.
 git blame filename
-```
 
-> Show who changed each line.
-
-```bash
+# Find commits where text was added/removed.
 git log -S "text"
 ```
 
-> Find commits where text was added/removed.
+
 
 ---
 
 ## 22. Compare Branches
 
 ```bash
+# Compare two branches.
 git diff main..feature
-```
 
-> Compare two branches.
-
-```bash
+# Commits in `feature` but not `main`.
 git log main..feature
 ```
-
-> Commits in `feature` but not `main`.
 
 ---
 
@@ -530,28 +432,18 @@ git log main..feature
 ```bash
 git switch <branch>
 
+# Move branch commits on top of latest `main`.
 git rebase main
-```
 
-> Move branch commits on top of latest `main`.
-
-```bash
+# Continue after resolving conflict.
 git rebase --continue
-```
 
-> Continue after resolving conflict.
-
-```bash
+# Cancel rebase.
 git rebase --abort
-```
 
-> Cancel rebase.
-
-```bash
+# Interactively edit recent commits.
 git rebase -i HEAD~3
 ```
-
-> Interactively edit recent commits.
 
 > ⚠️ **Avoid rebasing shared/public commits unless you understand the impact.**
 
@@ -560,28 +452,18 @@ git rebase -i HEAD~3
 ## 24. Cherry-Pick
 
 ```bash
+# Apply one commit to the current branch.
 git cherry-pick <commit>
-```
 
-> Apply one commit to the current branch.
-
-```bash
+# Cancel cherry-pick.
 git cherry-pick --abort
 ```
 
-> Cancel cherry-pick.
+
 
 ---
 
 ## 25. Conflict Handling
-
-```text
-<<<<<<< HEAD
-Current branch
-=======
-Incoming changes
->>>>>>> branch
-```
 
 ### Resolve
 
@@ -607,9 +489,7 @@ git rebase --continue
 
 ```bash
 git merge --abort
-```
 
-```bash
 git rebase --abort
 ```
 
@@ -618,22 +498,17 @@ git rebase --abort
 ## 26. Clean Untracked Files
 
 ```bash
+# Preview files that will be removed.
 git clean -n
-```
 
-> Preview files that will be removed.
-
-```bash
+# Remove untracked files.
 git clean -f
-```
 
-> Remove untracked files.
-
-```bash
+# Remove untracked files + directories.
 git clean -fd
 ```
 
-> Remove untracked files + directories.
+
 
 > ⚠️ **Use carefully — deleted files are not recoverable through Git.**
 
@@ -642,16 +517,12 @@ git clean -fd
 ## 27. Git Reflog
 
 ```bash
+# Find previous HEAD positions.
 git reflog
-```
 
-> Find previous HEAD positions.
-
-```bash
+# Recover from many accidental resets.
 git reset --hard <reflog-commit>
 ```
-
-> Recover from many accidental resets.
 
 ---
 
@@ -683,18 +554,17 @@ git push -u origin feature/my-feature
 
 ## 29. Update Feature Branch
 
+### Using Merge
 ```bash
 git switch main
 git pull
 
+# Keep feature branch updated with `main`.
 git switch feature/my-feature
 git merge main
 ```
 
-> Keep feature branch updated with `main`.
-
 ### Using Rebase
-
 ```bash
 git switch main
 git pull
