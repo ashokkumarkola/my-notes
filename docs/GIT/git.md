@@ -1,4 +1,22 @@
 
+.git
+
+
+
+git tag -a "version.1"
+git tag -a "version.2"
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
