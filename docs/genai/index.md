@@ -1,5 +1,9 @@
 # GenAI
 
-Prompts and notes for working with AI assistants.
+LLMs, prompting, AI-assisted coding.
 
-- [Production-grade refactor prompt](prompts/prompt.md)
+| Page | Content |
+|---|---|
+| [Cheat sheet](cheat-sheet.md) | Terms, parameters, prompt structure |
+| [Prompts](prompts/index.md) | Reusable prompts |
+| [LangChain](langchain/index.md) | LLM app framework |

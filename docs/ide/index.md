@@ -1,5 +1,5 @@
 # IDE
 
-Editor setup and extensions.
-
-- [VS Code extensions](vscode/extensions.md)
+| Section | Content |
+|---|---|
+| [VS Code](vscode/index.md) | Shortcuts, CLI, extensions |
