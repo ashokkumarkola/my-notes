@@ -57,36 +57,102 @@ nav:
   - Home: index.md
   - Cloud:
       - cloud/index.md
-      - AWS: cloud/aws/index.md
-      - Azure: cloud/azure/index.md
-  - Git:
-      - git/index.md
-      - Commands: git/git-commands.md
-      - Concepts: git/git-notes.md
-      - Notes: git/git.md
-      - SSH Keys: git/add-ssh-keys.md
+      - Cheat Sheet: cloud/cheat-sheet.md
+      - Concepts: cloud/cloud-concepts.md
+      - AWS:
+          - cloud/aws/index.md
+          - Cheat Sheet: cloud/aws/cheat-sheet.md
+          - Notes: cloud/aws/aws-notes.md
+      - Azure:
+          - cloud/azure/index.md
+          - Cheat Sheet: cloud/azure/cheat-sheet.md
+          - Notes: cloud/azure/azure-notes.md
+  - Languages:
+      - languages/index.md
+      - Python:
+          - languages/python/index.md
+          - Cheat Sheet: languages/python/cheat-sheet.md
+      - JavaScript:
+          - languages/javascript/index.md
+          - Cheat Sheet: languages/javascript/cheat-sheet.md
+      - Java:
+          - languages/java/index.md
+          - Cheat Sheet: languages/java/cheat-sheet.md
+  - Frameworks:
+      - frameworks/index.md
+      - React:
+          - frameworks/react/index.md
+          - Cheat Sheet: frameworks/react/cheat-sheet.md
+      - FastAPI:
+          - frameworks/fastapi/index.md
+          - Cheat Sheet: frameworks/fastapi/cheat-sheet.md
+  - Databases:
+      - databases/index.md
+      - SQL:
+          - databases/sql/index.md
+          - Cheat Sheet: databases/sql/cheat-sheet.md
+      - PostgreSQL:
+          - databases/psql/index.md
+          - Cheat Sheet: databases/psql/cheat-sheet.md
+      - MongoDB:
+          - databases/mongodb/index.md
+          - Cheat Sheet: databases/mongodb/cheat-sheet.md
+  - Fullstack:
+      - fullstack/index.md
+      - Backend:
+          - fullstack/backend/index.md
+          - Cheat Sheet: fullstack/backend/cheat-sheet.md
+          - Roadmap: fullstack/backend/backend-roadmap.md
+          - Notes: fullstack/backend/backend-notes.md
+      - Frontend:
+          - fullstack/frontend/index.md
+          - Cheat Sheet: fullstack/frontend/cheat-sheet.md
+          - Notes: fullstack/frontend/frontend.md
   - OS:
       - os/index.md
-      - Ubuntu Terminal: os/ubuntu/terminal.md
-      - Windows CMD: os/windows/command-prompt.md
-  - Learn:
-      - learn/index.md
-      - Backend:
-          - Roadmap: learn/backend/backend-roadmap.md
-          - Notes: learn/backend/backend-notes.md
-      - Frontend: learn/frontend/frontend.md
+      - Cheat Sheet: os/cheat-sheet.md
+      - Ubuntu:
+          - os/ubuntu/index.md
+          - Cheat Sheet: os/ubuntu/cheat-sheet.md
+          - Terminal: os/ubuntu/terminal.md
+          - Install Softwares: os/ubuntu/install-softwares.md
+      - Windows:
+          - os/windows/index.md
+          - Cheat Sheet: os/windows/cheat-sheet.md
+          - Command Prompt: os/windows/command-prompt.md
+  - IDE:
+      - ide/index.md
+      - VS Code:
+          - ide/vscode/index.md
+          - Cheat Sheet: ide/vscode/cheat-sheet.md
+          - Extensions: ide/vscode/extensions.md
   - GenAI:
       - genai/index.md
-      - Refactor Prompt: genai/prompts/prompt.md
+      - Cheat Sheet: genai/cheat-sheet.md
+      - Prompts:
+          - genai/prompts/index.md
+          - Refactor Prompt: genai/prompts/prompt.md
+      - LangChain:
+          - genai/langchain/index.md
+          - Cheat Sheet: genai/langchain/cheat-sheet.md
   - Tools:
-      - IDE:
-          - ide/index.md
-          - VS Code Extensions: ide/vscode/extensions.md
-      - Install: install/install.md
+      - tools/index.md
+      - Git:
+          - tools/git/index.md
+          - Cheat Sheet: tools/git/cheat-sheet.md
+          - Commands: tools/git/git-commands.md
+          - Concepts: tools/git/git-notes.md
+          - Notes: tools/git/git.md
+          - SSH Keys: tools/git/add-ssh-keys.md
+      - Figma:
+          - tools/figma/index.md
+          - Cheat Sheet: tools/figma/cheat-sheet.md
       - MkDocs:
-          - Phases: mkdocs/mkdocs-phases.md
-          - Setup Guide: mkdocs/mkdocs-setup-guide.md
-          - Format Guide: mkdocs/mkdocs-format-guide.md
-          - mkdocs.yml Reference: mkdocs/mkdocs-yml-reference.md
-          - Note Templates: mkdocs/note-template.md
-          - Conventions: mkdocs/conventions.md
+          - tools/mkdocs/index.md
+          - Cheat Sheet: tools/mkdocs/cheat-sheet.md
+          - Phases: tools/mkdocs/mkdocs-phases.md
+          - Setup Guide: tools/mkdocs/mkdocs-setup-guide.md
+          - Format Guide: tools/mkdocs/mkdocs-format-guide.md
+          - mkdocs.yml Reference: tools/mkdocs/mkdocs-yml-reference.md
+          - Note Templates: tools/mkdocs/note-template.md
+          - Conventions: tools/mkdocs/conventions.md

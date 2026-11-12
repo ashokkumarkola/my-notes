@@ -1,6 +1,7 @@
 # Operating Systems
 
-Shell and terminal commands.
-
-- [Ubuntu terminal](ubuntu/terminal.md)
-- [Windows Command Prompt](windows/command-prompt.md)
+| Page | Content |
+|---|---|
+| [Cheat sheet](cheat-sheet.md) | Linux ↔ Windows command map |
+| [Ubuntu](ubuntu/index.md) | Terminal, apt, system |
+| [Windows](windows/index.md) | CMD, PowerShell |
