@@ -6,11 +6,10 @@ Official reference: [MkDocs config](https://www.mkdocs.org/user-guide/configurat
 
 ## Current config
 
-```yaml
-site_name: My Knowledge Base
-docs_dir: docs
-theme:
-  name: material
+Source of truth: `mkdocs.yml` in repo root. Not copied here, so it never goes stale. Phase 3 keys active: site info, theme, palette, features, `search`, `validation`, `nav`.
+
+```bash
+cat mkdocs.yml        # view full current config
 ```
 
 ---
@@ -20,10 +19,10 @@ theme:
 | Key | Purpose | Status |
 |---|---|---|
 | `site_name` | Title in header and browser tab | Active |
-| `site_description` | Meta description for search engines | Phase 3 |
-| `site_author` | Meta author | Phase 3 |
+| `site_description` | Meta description for search engines | Active |
+| `site_author` | Meta author | Active |
 | `site_url` | Final public URL. Needed for sitemap, canonical links | Phase 7 |
-| `copyright` | Footer text | Phase 3 |
+| `copyright` | Footer text | Active |
 
 ## Repository
 
@@ -41,13 +40,13 @@ theme:
 | `site_dir` | Output folder. Default `site` | Default |
 | `exclude_docs` | Files in `docs/` to skip, gitignore syntax | As needed |
 | `not_in_nav` | Pages built but hidden from nav, no warning | As needed |
-| `validation` | Warning level for links, nav, anchors | Phase 3 |
+| `validation` | Warning level for links, nav, anchors | Active |
 
 ## Navigation
 
 | Key | Purpose | Status |
 |---|---|---|
-| `nav` | Explicit menu order. Omit = auto from folders | Phase 3 |
+| `nav` | Explicit menu order. Omit = auto from folders | Active |
 
 ```yaml
 nav:
@@ -64,13 +63,13 @@ Paths are relative to `docs_dir`. Every path must exist.
 | Key | Purpose | Status |
 |---|---|---|
 | `theme.name` | `material` | Active |
-| `theme.language` | UI language, e.g. `en` | Phase 3 |
-| `theme.palette` | Colors, light/dark toggle | Phase 3 |
-| `theme.font.text` / `.code` | Google Fonts names, or `false` to disable | Phase 3 |
+| `theme.language` | UI language, e.g. `en` | Active |
+| `theme.palette` | Colors, light/dark toggle | Active |
+| `theme.font.text` / `.code` | Google Fonts names, or `false` to disable | Active |
 | `theme.logo` / `theme.icon.logo` | Header logo image or icon | Phase 5 |
 | `theme.favicon` | Browser tab icon | Phase 5 |
 | `theme.icon.repo` | Repo icon in header | Phase 7 |
-| `theme.features` | UI behaviours, see below | Phase 3 |
+| `theme.features` | UI behaviours, see below | Active |
 
 ### Light/dark toggle
 
@@ -97,20 +96,20 @@ theme:
 
 | Feature | Effect | Status |
 |---|---|---|
-| `navigation.tabs` | Top-level sections as header tabs | Phase 3 |
-| `navigation.tabs.sticky` | Tabs stay visible on scroll | Phase 3 |
-| `navigation.sections` | Sidebar groups rendered as headings | Phase 3 |
+| `navigation.tabs` | Top-level sections as header tabs | Active |
+| `navigation.tabs.sticky` | Tabs stay visible on scroll | Active |
+| `navigation.sections` | Sidebar groups rendered as headings | Active |
 | `navigation.expand` | Sidebar groups expanded by default | Optional |
-| `navigation.indexes` | Folder `index.md` becomes clickable section title | Phase 3 |
-| `navigation.path` | Breadcrumbs above title | Phase 3 |
-| `navigation.top` | Back-to-top button | Phase 3 |
-| `navigation.footer` | Previous/next links at page bottom | Phase 3 |
-| `navigation.instant` | SPA-style fast page loads | Phase 3 |
-| `navigation.tracking` | URL updates with current heading | Phase 3 |
-| `toc.follow` | Right TOC scrolls to active heading | Phase 3 |
+| `navigation.indexes` | Folder `index.md` becomes clickable section title | Active |
+| `navigation.path` | Breadcrumbs above title | Active |
+| `navigation.top` | Back-to-top button | Active |
+| `navigation.footer` | Previous/next links at page bottom | Active |
+| `navigation.instant` | SPA-style fast page loads | Active |
+| `navigation.tracking` | URL updates with current heading | Active |
+| `toc.follow` | Right TOC scrolls to active heading | Active |
 | `toc.integrate` | TOC inside left sidebar instead of right | Optional |
-| `search.suggest` | Autocomplete in search | Phase 3 |
-| `search.highlight` | Highlight search terms on result page | Phase 3 |
+| `search.suggest` | Autocomplete in search | Active |
+| `search.highlight` | Highlight search terms on result page | Active |
 | `search.share` | Share-search-link button | Optional |
 | `header.autohide` | Hide header on scroll down | Optional |
 | `content.code.copy` | Copy button on code blocks | Phase 4 |
@@ -141,7 +140,7 @@ Listing `plugins:` replaces defaults. Always include `search` again.
 
 | Plugin | Purpose | Package | Status |
 |---|---|---|---|
-| `search` | Full-text search | built-in | Phase 3 |
+| `search` | Full-text search | built-in | Active |
 | `tags` | Tag index pages | built into Material | Phase 6 |
 | `offline` | Site works from file system | built into Material | Phase 8 |
 | `git-revision-date-localized` | "Last updated" date | `mkdocs-git-revision-date-localized-plugin` | Phase 8 |

@@ -1,4 +1,92 @@
+# ---------- Site ----------
 site_name: My Knowledge Base
+site_description: Personal technical notes and learning guides
+site_author: Ashoka
+copyright: Copyright &copy; 2026 Ashoka
 docs_dir: docs
+
+# ---------- Theme ----------
 theme:
   name: material
+  language: en
+  font:
+    text: Roboto
+    code: Roboto Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.indexes
+    - navigation.path
+    - navigation.top
+    - navigation.footer
+    - navigation.instant
+    - navigation.tracking
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+# ---------- Plugins ----------
+plugins:
+  - search
+
+# ---------- Validation (strict build catches these) ----------
+validation:
+  omitted_files: warn
+  absolute_links: warn
+  unrecognized_links: warn
+  anchors: warn
+
+# ---------- Navigation ----------
+nav:
+  - Home: index.md
+  - Cloud:
+      - cloud/index.md
+      - AWS: cloud/aws/index.md
+      - Azure: cloud/azure/index.md
+  - Git:
+      - git/index.md
+      - Commands: git/git-commands.md
+      - Concepts: git/git-notes.md
+      - Notes: git/git.md
+      - SSH Keys: git/add-ssh-keys.md
+  - OS:
+      - os/index.md
+      - Ubuntu Terminal: os/ubuntu/terminal.md
+      - Windows CMD: os/windows/command-prompt.md
+  - Learn:
+      - learn/index.md
+      - Backend:
+          - Roadmap: learn/backend/backend-roadmap.md
+          - Notes: learn/backend/backend-notes.md
+      - Frontend: learn/frontend/frontend.md
+  - GenAI:
+      - genai/index.md
+      - Refactor Prompt: genai/prompts/prompt.md
+  - Tools:
+      - IDE:
+          - ide/index.md
+          - VS Code Extensions: ide/vscode/extensions.md
+      - Install: install/install.md
+      - MkDocs:
+          - Phases: mkdocs/mkdocs-phases.md
+          - Setup Guide: mkdocs/mkdocs-setup-guide.md
+          - Format Guide: mkdocs/mkdocs-format-guide.md
+          - mkdocs.yml Reference: mkdocs/mkdocs-yml-reference.md
+          - Note Templates: mkdocs/note-template.md
+          - Conventions: mkdocs/conventions.md

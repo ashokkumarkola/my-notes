@@ -30,7 +30,7 @@ Related guides:
 | 0 | Safety checkpoint | Clean working tree | Done |
 | 1 | Local setup | Site runs locally | Done |
 | 2 | Restructure notes | Lowercase paths, all `.md` | Done |
-| 3 | Configure `mkdocs.yml` | Tabs, sidebar, theme, search | To do |
+| 3 | Configure `mkdocs.yml` | Tabs, sidebar, theme, search | Done |
 | 4 | Markdown extensions | Code, callouts, Mermaid | To do |
 | 5 | Homepage + about | Landing dashboard | To do |
 | 6 | Content polish | Template, split, tags | To do |
@@ -231,7 +231,106 @@ git commit -m "docs: add section index pages, fix converted notes"
 
 ## Phase 3: Configure `mkdocs.yml`
 
-_To do._
+Goal: top tabs, sidebar, light/dark toggle, search, breadcrumbs, controlled menu order.
+
+### 1. Plan tabs
+
+Top-level `nav` entries = header tabs. Keep ≤ 7. Group small sections under one tab.
+
+```text
+Home | Cloud | Git | OS | Learn | GenAI | Tools
+                                          └── IDE, Install, MkDocs
+```
+
+`nav` groups display only. Files and URLs stay unchanged.
+
+### 2. Write `mkdocs.yml`
+
+Full annotated keys: [mkdocs.yml Reference](mkdocs-yml-reference.md). Skeleton:
+
+```yaml
+site_name: My Knowledge Base
+site_description: Personal technical notes and learning guides
+copyright: Copyright &copy; 2026 <name>
+docs_dir: docs
+
+theme:
+  name: material
+  palette:                       # light + dark with toggle
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle: { icon: material/brightness-7, name: Switch to dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle: { icon: material/brightness-4, name: Switch to light mode }
+  features:
+    - navigation.tabs            # top tabs
+    - navigation.sections        # sidebar groups as headings
+    - navigation.indexes         # folder index.md = section page
+    - navigation.path            # breadcrumbs
+    - navigation.top             # back-to-top
+    - navigation.footer          # prev/next
+    - toc.follow
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search                       # re-add when plugins: is listed
+
+validation:                      # make --strict catch more
+  omitted_files: warn            # page not in nav
+  anchors: warn                  # broken #heading links
+
+nav:
+  - Home: index.md
+  - Cloud:
+      - cloud/index.md           # no label = section landing page
+      - AWS: cloud/aws/index.md
+```
+
+Why each block:
+
+- `palette` list of 2 = automatic toggle button.
+- `features` = UI behaviours, no extra install.
+- `validation` = default only logs broken anchors as info; `warn` makes `--strict` fail.
+- Explicit `nav` = fixed order. Omit `nav` = auto, alphabetical from folders.
+
+### 3. Run and check
+
+```bash
+mkdocs serve
+```
+
+| Check | Expected |
+|---|---|
+| Header | 7 tabs |
+| Click section tab | Opens its `index.md` |
+| Sun/moon icon | Toggles theme |
+| Page top | Breadcrumbs |
+| Page bottom | Prev/next links |
+| Search | Suggestions + highlighted matches |
+
+### 4. Strict build
+
+```bash
+mkdocs build --strict
+```
+
+| Message | Fix |
+|---|---|
+| `... not included in the "nav"` | Add page to `nav` or `not_in_nav:` |
+| `... included in the 'nav' configuration, which is not found` | Fix path (relative to `docs/`) |
+| `... no such anchor` | Fix heading slug in link |
+| `while parsing a block mapping` | YAML indent: spaces, 2 per level |
+
+### 5. Commit
+
+```bash
+git add -A
+git commit -m "chore: configure mkdocs theme, navigation, search, validation"
+```
+
+Rule from now on: new page = create file → add `nav` line → `mkdocs build --strict`.
 
 ## Phase 4: Markdown extensions
 
