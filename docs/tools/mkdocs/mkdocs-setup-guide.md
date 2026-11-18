@@ -229,20 +229,53 @@ git commit -m "docs: add section index pages, fix converted notes"
 
 ---
 
+### 7. Restructure log
+
+Changes after first restructure. Same rules: `git mv`, renames committed separately, `nav` updated, strict build.
+
+| Change | Why |
+|---|---|
+| `git/`, `mkdocs/` → `tools/git/`, `tools/mkdocs/` | Group tools under one tab |
+| `learn/` → `fullstack/` | Clearer category name |
+| New `languages/`, `frameworks/`, `databases/`, `tools/figma/`, `genai/langchain/` | Planned topics |
+| `cloud/index.md`, `aws/index.md`, `azure/index.md` notes → `cloud-concepts.md`, `aws-notes.md`, `azure-notes.md` | Free `index.md` for landing page |
+| `install/` removed | Merged into `os/ubuntu/install-softwares.md` |
+| Every folder: `index.md` + every topic: `cheat-sheet.md` | Consistent landing + quick reference |
+
+Move a note whose `index.md` holds content:
+
+```bash
+git mv docs/cloud/index.md docs/cloud/cloud-concepts.md   # keep history
+# create new docs/cloud/index.md as landing page
+grep -rn "cloud/index.md" docs/ mkdocs.yml                # fix links + nav
+mkdocs build --strict
+```
+
+Add new topic:
+
+```bash
+mkdir -p docs/<category>/<topic>
+# create index.md + cheat-sheet.md (see Conventions → Page roles)
+# add both to nav in mkdocs.yml
+mkdocs build --strict
+```
+
+---
+
 ## Phase 3: Configure `mkdocs.yml`
 
 Goal: top tabs, sidebar, light/dark toggle, search, breadcrumbs, controlled menu order.
 
 ### 1. Plan tabs
 
-Top-level `nav` entries = header tabs. Keep ≤ 7. Group small sections under one tab.
+Top-level `nav` entries = header tabs. Rule: one tab per folder directly under `docs/`. Subfolders = sidebar groups (`navigation.sections`).
 
 ```text
-Home | Cloud | Git | OS | Learn | GenAI | Tools
-                                          └── IDE, Install, MkDocs
+Home | Cloud | Languages | Frameworks | Databases | Fullstack | OS | IDE | GenAI | Tools
+        └── sidebar groups: AWS, Azure
 ```
 
-`nav` groups display only. Files and URLs stay unchanged.
+`nav` labels and order are display only. Files and URLs stay unchanged.
 
 ### 2. Write `mkdocs.yml`
 
@@ -303,7 +336,7 @@ mkdocs serve
 
 | Check | Expected |
 |---|---|
-| Header | 7 tabs |
+| Header | One tab per `docs/` folder |
 | Click section tab | Opens its `index.md` |
 | Sun/moon icon | Toggles theme |
 | Page top | Breadcrumbs |

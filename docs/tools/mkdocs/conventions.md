@@ -13,23 +13,49 @@ Rules that keep this knowledge base consistent. Check before adding or moving fi
 
 ## Folder structure
 
+Rule: **folder under `docs/` = top tab. Subfolder = guide group inside that tab.**
+
 ```text
 docs/
-├── index.md                 ← homepage
-├── <category>/              ← top tab: cloud, git, os, learn ...
-│   ├── index.md             ← section landing page (required)
-│   ├── <topic>.md           ← one topic = one file
-│   └── <big-topic>/         ← topic grows → own folder
-│       ├── index.md
-│       └── <subtopic>.md
+├── index.md                     ← homepage
+├── <category>/                  ← top tab
+│   ├── index.md                 ← category landing (required)
+│   ├── cheat-sheet.md           ← optional: category-wide quick ref
+│   └── <topic>/                 ← guide group in sidebar
+│       ├── index.md             ← topic landing (required)
+│       ├── cheat-sheet.md       ← quick ref (commands, tables)
+│       └── <subtopic>.md        ← full notes
 └── assets/
-    └── images/              ← shared images
+    └── images/                  ← shared images
 ```
 
-- Every folder has `index.md`.
+Current categories:
+
+```text
+cloud/        aws, azure
+languages/    python, javascript, java
+frameworks/   react, fastapi
+databases/    sql, psql, mongodb
+fullstack/    backend, frontend
+os/           ubuntu, windows
+ide/          vscode
+genai/        prompts, langchain
+tools/        git, figma, mkdocs
+```
+
+- Every folder has `index.md`. Every topic has `cheat-sheet.md`.
 - Max depth: 3 levels under `docs/`. Deeper = hard to navigate.
-- New category only when at least 1 real note exists.
-- Topic file > ~300 lines or many independent subtopics → split into folder.
+- New topic folder → create `index.md` + `cheat-sheet.md` → add both to `nav`.
+- New category = new top tab. Add only when at least 1 real topic exists.
+- Topic file > ~300 lines or many independent subtopics → split into files in same folder.
+
+### Page roles
+
+| File | Holds | Style |
+|---|---|---|
+| `index.md` | What it is (1 line) + table of pages | Links only |
+| `cheat-sheet.md` | Commands, tables, syntax | No theory, no long sentences |
+| `<subtopic>.md` | Full notes, explanations | [Note template](note-template.md) |
 
 ## Pages
 
