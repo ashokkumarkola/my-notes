@@ -2,7 +2,7 @@
 
 Syntax cheat sheet for notes in this site. Copy, paste, adapt.
 
-**Needs** = extension or feature to enable in `mkdocs.yml` (Phase 4). No tag = works out of the box.
+**Needs** = extension or feature it depends on. All enabled in `mkdocs.yml` (Phase 4), except Math and tags. Live render: [Format demo](format-demo.md).
 
 ---
 
@@ -432,7 +432,7 @@ $$
 
 ---
 
-## Extension checklist (feeds Phase 4)
+## Extension checklist
 
 | Extension / feature | Enables |
 |---|---|

@@ -40,6 +40,48 @@ theme:
     - toc.follow
     - search.suggest
     - search.highlight
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+
+# ---------- Markdown extensions ----------
+markdown_extensions:
+  # Python-Markdown built-ins
+  - toc:
+      permalink: true
+  - tables
+  - attr_list
+  - md_in_html
+  - admonition
+  - def_list
+  - footnotes
+  - abbr
+  # Code
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Blocks
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Inline
+  - pymdownx.mark
+  - pymdownx.caret
+  - pymdownx.tilde
+  - pymdownx.keys
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 # ---------- Plugins ----------
 plugins:
@@ -153,6 +195,7 @@ nav:
           - Phases: tools/mkdocs/mkdocs-phases.md
           - Setup Guide: tools/mkdocs/mkdocs-setup-guide.md
           - Format Guide: tools/mkdocs/mkdocs-format-guide.md
+          - Format Demo: tools/mkdocs/format-demo.md
           - mkdocs.yml Reference: tools/mkdocs/mkdocs-yml-reference.md
           - Note Templates: tools/mkdocs/note-template.md
           - Conventions: tools/mkdocs/conventions.md

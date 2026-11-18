@@ -31,7 +31,7 @@ Related guides:
 | 1 | Local setup | Site runs locally | Done |
 | 2 | Restructure notes | Lowercase paths, all `.md` | Done |
 | 3 | Configure `mkdocs.yml` | Tabs, sidebar, theme, search | Done |
-| 4 | Markdown extensions | Code, callouts, Mermaid | To do |
+| 4 | Markdown extensions | Code, callouts, Mermaid | Done |
 | 5 | Homepage + about | Landing dashboard | To do |
 | 6 | Content polish | Template, split, tags | To do |
 | 7 | Deploy | Live on GitHub Pages | To do |
@@ -367,7 +367,133 @@ Rule from now on: new page = create file → add `nav` line → `mkdocs build --
 
 ## Phase 4: Markdown extensions
 
-_To do._ Required extensions per format: see [Format Guide](mkdocs-format-guide.md).
+Goal: callouts, tabs, highlighted code, copy buttons, Mermaid, task lists, icons render.
+
+### 1. Add extensions to `mkdocs.yml`
+
+```yaml
+markdown_extensions:
+  # Python-Markdown built-ins
+  - toc:
+      permalink: true            # ¶ anchor on headings
+  - tables
+  - attr_list                    # { width="300" }, { .md-button }
+  - md_in_html                   # markdown inside <div markdown>
+  - admonition                   # !!! note
+  - def_list
+  - footnotes
+  - abbr
+  # Code
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  # Blocks
+  - pymdownx.details             # ??? collapsible
+  - pymdownx.tabbed:
+      alternate_style: true      # === "Tab"
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  # Inline
+  - pymdownx.mark                # ==highlight==
+  - pymdownx.caret               # ^^insert^^, x^2^
+  - pymdownx.tilde               # ~~strike~~, H~2~O
+  - pymdownx.keys                # ++ctrl+c++
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+```
+
+Why: plain Python-Markdown knows basic syntax only. `pymdownx` = PyMdown Extensions, installed with `mkdocs-material`. No new `pip install`.
+
+### 2. Add content features
+
+```yaml
+theme:
+  features:
+    - content.code.copy          # copy button
+    - content.code.annotate      # # (1)! annotations
+    - content.tabs.link          # same-label tabs switch together
+    - content.tooltips           # styled tooltips
+```
+
+### 3. Fix VS Code YAML errors
+
+`.vscode/settings.json`:
+
+```json
+{
+  "yaml.customTags": [
+    "!!python/name:pymdownx.superfences.fence_code_format",
+    "!!python/name:material.extensions.emoji.twemoji",
+    "!!python/name:material.extensions.emoji.to_svg"
+  ]
+}
+```
+
+Why: editor flags `!!python/name:` as unknown tag. Build unaffected.
+
+### 4. Create demo page
+
+`docs/tools/mkdocs/format-demo.md`: one live example per format, outside code blocks. Add to `nav`.
+
+Why: guide shows syntax, demo shows result.
+
+### 5. Run and check
+
+```bash
+mkdocs serve                       # restart after mkdocs.yml change
+mkdocs build --strict
+```
+
+| Check on demo page | Expected |
+|---|---|
+| `!!! note` | Colored box |
+| `??? question` | Click to expand |
+| `=== "Linux"` | Tabs; same labels switch together |
+| Code block | Title, line numbers, highlighted lines, copy button |
+| `# (1)!` | Clickable ⊕ annotation |
+| ```` ```mermaid ```` | Diagram, not code |
+| `- [x]` | Checkbox |
+| `:material-aws:` | Icon |
+
+Verify existing notes unchanged: no accidental highlight from `==`, `~~`, `^^`, `++` in plain text.
+
+```bash
+grep -rnE '\^\^|==|~~|\+\+' docs --include=*.md     # review hits outside code
+```
+
+### 6. Commit
+
+```bash
+git add -A
+git commit -m "chore: enable markdown extensions and code features"
+```
+
+### Skipped on purpose
+
+| Extension | Why |
+|---|---|
+| `pymdownx.snippets` | `--8<--` triggers even inside code examples |
+| `pymdownx.arithmatex` | Needs MathJax JS. Add when math needed |
+| `pymdownx.betterem`, `smartsymbols` | Low value |
+
+### Gotchas
+
+| Problem | Fix |
+|---|---|
+| Content inside `!!!` / `===` not in box | Indent 4 spaces, blank line after title line |
+| Mermaid shows as code | `custom_fences` must sit under `pymdownx.superfences` |
+| Tabs look unstyled | `alternate_style: true` missing |
+| `hl_lines` not highlighted | `line_spans: __span` missing |
+| Icons show as `:material-x:` | Wrong name or emoji extension missing |
+| Change not visible | Restart `mkdocs serve` |
 
 ## Phase 5: Homepage + about
 

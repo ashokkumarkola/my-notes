@@ -112,21 +112,30 @@ theme:
 | `search.highlight` | Highlight search terms on result page | Active |
 | `search.share` | Share-search-link button | Optional |
 | `header.autohide` | Hide header on scroll down | Optional |
-| `content.code.copy` | Copy button on code blocks | Phase 4 |
-| `content.code.annotate` | Code annotations `# (1)!` | Phase 4 |
-| `content.tabs.link` | All tabs with same label switch together | Phase 4 |
-| `content.tooltips` | Styled tooltips | Phase 4 |
+| `content.code.copy` | Copy button on code blocks | Active |
+| `content.code.annotate` | Code annotations `# (1)!` | Active |
+| `content.tabs.link` | All tabs with same label switch together | Active |
+| `content.tooltips` | Styled tooltips | Active |
 | `content.action.edit` | "Edit this page" button | Phase 7 |
 
 ## Markdown extensions
 
-Full list with what each enables: [Format Guide → Extension checklist](mkdocs-format-guide.md#extension-checklist-feeds-phase-4). Added in Phase 4.
+Full list with what each enables: [Format Guide → Extension checklist](mkdocs-format-guide.md#extension-checklist). Active since Phase 4. Full block: `mkdocs.yml`.
+
+Key options used:
+
+| Option | Effect |
+|---|---|
+| `toc.permalink: true` | ¶ link on each heading |
+| `pymdownx.highlight.anchor_linenums` | Line numbers become links |
+| `pymdownx.highlight.line_spans: __span` | Needed for `hl_lines` highlight |
+| `pymdownx.tabbed.alternate_style: true` | Required by Material tabs style |
+| `pymdownx.tasklist.custom_checkbox: true` | Styled checkboxes |
+| `pymdownx.emoji` index + generator | Material icons `:material-aws:` |
+| `superfences.custom_fences` mermaid | ```` ```mermaid ```` renders diagrams |
 
 ```yaml
 markdown_extensions:
-  - toc:
-      permalink: true
-  - admonition
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid

@@ -57,7 +57,7 @@ mkdocs build --strict
 | Tabs | `=== "Linux"` + 4-space indent |
 | Keys | `++ctrl+c++` |
 
-Full syntax: [Format guide](mkdocs-format-guide.md).
+Full syntax: [Format guide](mkdocs-format-guide.md). Live render: [Format demo](format-demo.md).
 
 ## Common errors
 

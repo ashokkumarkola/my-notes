@@ -189,4 +189,4 @@ One-line description of what this section covers.
 - [Subsection](subsection/index.md): short description
 ````
 
-After Phase 4, use grid cards instead of a list: see [Format Guide → Grid cards](mkdocs-format-guide.md#13-grid-cards-dashboard-layout).
+Optional: grid cards instead of a list: see [Format Guide → Grid cards](mkdocs-format-guide.md#13-grid-cards-dashboard-layout).
