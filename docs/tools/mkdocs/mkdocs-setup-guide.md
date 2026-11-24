@@ -41,7 +41,7 @@ Related guides:
 | 4 | Markdown extensions | Code, callouts, Mermaid | Done |
 | 5 | Homepage + about | Landing dashboard | Done |
 | 6 | Tags + related links | Tag index, cross-links | Done (content: ongoing) |
-| 7 | Deploy | Live on GitHub Pages | To do |
+| 7 | Deploy | Live on GitHub Pages | Done |
 | 8 | Extras | Domain, plugins | To do |
 
 ---
@@ -723,7 +723,135 @@ mkdocs build --strict
 
 ## Phase 7: Deploy to GitHub Pages
 
-_To do._
+Goal: push to `main` → site rebuilds and goes live automatically.
+URL pattern: `https://<user>.github.io/<repo>/`.
+
+### 1. Pre-publish check (public repo = everything readable, incl. history)
+
+```bash
+git log --all --format='%ae' | sort | uniq -c          # author emails become public
+git log --all -p | grep -nE 'AKIA[0-9A-Z]{16}|ghp_|github_pat_|PRIVATE KEY|sk-[A-Za-z0-9]{20,}'
+git ls-files                                           # every tracked file goes public
+```
+
+Secret found in history → rotate it first. Deleting file does not remove it from history.
+
+### 2. Add site + repo config to `mkdocs.yml`
+
+```yaml
+site_url: https://<user>.github.io/<repo>/     # canonical links, sitemap
+repo_url: https://github.com/<user>/<repo>     # GitHub link in header
+repo_name: <user>/<repo>
+edit_uri: edit/main/docs/                      # "edit this page" target
+
+theme:
+  icon:
+    repo: fontawesome/brands/github
+  features:
+    - content.action.edit                      # pencil icon on each page
+```
+
+### 3. Add workflow `.github/workflows/deploy.yml`
+
+```yaml
+name: Deploy docs
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+```
+
+| Part | Why |
+|---|---|
+| `on: push: main` | Deploy only from published branch |
+| `workflow_dispatch` | Manual "Run workflow" button |
+| `permissions` | Minimum needed: Pages write + OIDC token |
+| `concurrency` | New push cancels older deploy |
+| `--strict` | Broken link / bad tag = no deploy |
+| `upload-pages-artifact` → `deploy-pages` | Official Pages flow, no `gh-pages` branch |
+
+Hardening (optional): pin each action to full commit SHA instead of `@v4`. Find SHA on action's GitHub releases page.
+
+### 4. GitHub settings (browser, one time)
+
+1. Repo → **Settings → General → Danger Zone → Change visibility → Public**.
+2. Repo → **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+### 5. Push and watch
+
+```bash
+mkdocs build --strict                  # local check first
+git add -A
+git commit -m "ci: deploy docs to github pages"
+git push origin main
+```
+
+Repo → **Actions** tab → "Deploy docs" run → green → open URL from deploy job.
+
+### 6. Check live site
+
+| Check | Expected |
+|---|---|
+| URL opens | Homepage dashboard |
+| Assets | Favicon, logo, icons load (no 404) |
+| Header right | GitHub repo link + stars/forks |
+| Page top right | Pencil icon → GitHub editor |
+| Search | Works |
+| Phone | Layout OK |
+
+### Troubleshooting
+
+| Problem | Fix |
+|---|---|
+| `Get Pages site failed` / 404 on deploy | Settings → Pages → Source must be **GitHub Actions** |
+| Build job red at `mkdocs build --strict` | Run same command locally, fix warning |
+| Site loads without CSS / broken links | Wrong `site_url`; must end with `/<repo>/` |
+| Deploy blocked: environment protection | Settings → Environments → github-pages → allow `main` |
+| Old content shown | Hard refresh `Ctrl+Shift+R`; Pages CDN takes ~1 min |
+| Workflow not triggered | Pushed to `dev`, not `main` |
+
+### Branch flow from now on
+
+```bash
+git switch dev            # work here
+# edit, mkdocs serve, commit
+git switch main && git merge dev && git push   # publish
+```
 
 ## Phase 8: Extras
 

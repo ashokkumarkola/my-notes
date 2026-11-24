@@ -28,16 +28,16 @@ cat mkdocs.yml        # view full current config
 | `site_name` | Title in header and browser tab | Active |
 | `site_description` | Meta description for search engines | Active |
 | `site_author` | Meta author | Active |
-| `site_url` | Final public URL. Needed for sitemap, canonical links | Phase 7 |
+| `site_url` | Final public URL. Needed for sitemap, canonical links | Active |
 | `copyright` | Footer text | Active |
 
 ## Repository
 
 | Key | Purpose | Status |
 |---|---|---|
-| `repo_url` | GitHub link + icon in header | Phase 7 |
-| `repo_name` | Label next to repo icon | Phase 7 |
-| `edit_uri` | "Edit this page" target, e.g. `edit/main/docs/` | Phase 7 |
+| `repo_url` | GitHub link + icon in header | Active |
+| `repo_name` | Label next to repo icon | Active |
+| `edit_uri` | "Edit this page" target, e.g. `edit/main/docs/` | Active |
 
 ## Build
 
@@ -75,7 +75,7 @@ Paths are relative to `docs_dir`. Every path must exist.
 | `theme.font.text` / `.code` | Google Fonts names, or `false` to disable | Active |
 | `theme.logo` / `theme.icon.logo` | Header logo image or icon | Active |
 | `theme.favicon` | Browser tab icon | Active |
-| `theme.icon.repo` | Repo icon in header | Phase 7 |
+| `theme.icon.repo` | Repo icon in header | Active |
 | `theme.features` | UI behaviours, see below | Active |
 
 ### Light/dark toggle
@@ -123,7 +123,7 @@ theme:
 | `content.code.annotate` | Code annotations `# (1)!` | Active |
 | `content.tabs.link` | All tabs with same label switch together | Active |
 | `content.tooltips` | Styled tooltips | Active |
-| `content.action.edit` | "Edit this page" button | Phase 7 |
+| `content.action.edit` | "Edit this page" button | Active |
 
 ## Markdown extensions
 

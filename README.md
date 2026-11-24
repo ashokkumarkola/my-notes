@@ -1,6 +1,6 @@
 # My Notes
 
-Personal technical knowledge base. Markdown notes in `docs/`, published as a website with [MkDocs](https://www.mkdocs.org) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
+Personal technical knowledge base. Markdown notes in `docs/`, published at **<https://ashokkumarkola.github.io/my-notes/>** with [MkDocs](https://www.mkdocs.org) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
 
 ## Quick start
 
@@ -17,6 +17,7 @@ mkdocs serve                      # http://127.0.0.1:8000
 | Live preview | `mkdocs serve` |
 | Build, fail on warnings | `mkdocs build --strict` |
 | Output folder | `site/` (git-ignored) |
+| Deploy | Push to `main` → GitHub Actions → GitHub Pages |
 
 ## Structure
 

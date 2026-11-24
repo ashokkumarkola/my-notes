@@ -136,7 +136,7 @@ mkdocs build --strict              # confirm no broken links
 ```
 
 - Commit renames separately from content edits.
-- After Phase 7, renaming published pages breaks URLs. Add redirects (Phase 8).
+- Published pages: renaming breaks URLs. Add redirects (Phase 8).
 
 ## Git
 
@@ -155,7 +155,7 @@ Format: `<type>: <short summary>`, lowercase, imperative.
 
 ### Branches
 
-- `main` = published site (after Phase 7).
+- `main` = published site. Every push to `main` deploys.
 - `dev` or `<topic>` branch for big changes. Merge when `mkdocs build --strict` passes.
 
 ### Before every commit

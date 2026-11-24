@@ -17,7 +17,7 @@ tags:
 7. **Deploy.** Add `.github/workflows/deploy.yml`, set Settings → Pages → Source to GitHub Actions, push and check the live URL.
 8. **Optional extras.** Custom domain, plus plugins for last-updated dates, page redirects and a blog.
 
-**Before Phase 7:** a public repo means every note is public. Decide whether this repo should be public or private.
+**Phase 7 decision:** repo is **public**. Every note and the full git history are readable by anyone. Never commit secrets.
 
 **Method to reuse next time**
 1. Read the source of truth first (here, the guide's roadmap in section 15).
