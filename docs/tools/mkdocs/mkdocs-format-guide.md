@@ -1,8 +1,15 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 # Markdown Format Guide
 
 Syntax cheat sheet for notes in this site. Copy, paste, adapt.
 
-**Needs** = extension or feature it depends on. All enabled in `mkdocs.yml` (Phase 4), except Math and tags. Live render: [Format demo](format-demo.md).
+**Needs** = extension or feature it depends on. All enabled in `mkdocs.yml` (Phases 4, 6), except Math. Live render: [Format demo](format-demo.md).
 
 ---
 
@@ -14,7 +21,7 @@ Syntax cheat sheet for notes in this site. Copy, paste, adapt.
 ---
 title: Custom page title       # overrides H1 in nav/browser tab
 description: One-line summary  # used by search engines
-tags:                          # Needs: tags plugin
+tags:                          # allowed list: Conventions → Tags
   - git
   - devops
 hide:                          # hide sidebars on this page

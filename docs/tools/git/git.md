@@ -1,3 +1,10 @@
+---
+tags:
+  - notes
+  - tools
+  - git
+---
+
 # Git Notes
 
 .git

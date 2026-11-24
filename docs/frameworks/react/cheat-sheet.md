@@ -1,3 +1,12 @@
+---
+tags:
+  - cheat-sheet
+  - frameworks
+  - react
+  - javascript
+  - frontend
+---
+
 # React Cheat Sheet
 
 ## Setup
@@ -102,3 +111,9 @@ Real apps: TanStack Query for server state.
 | Forms | React Hook Form + Zod |
 | Styling | Tailwind CSS |
 | Full-stack | Next.js |
+
+## Related
+
+- [JavaScript](../../languages/javascript/cheat-sheet.md)
+- [Frontend](../../fullstack/frontend/cheat-sheet.md)
+- [FastAPI](../fastapi/cheat-sheet.md)

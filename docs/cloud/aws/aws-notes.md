@@ -1,4 +1,9 @@
-
+---
+tags:
+  - notes
+  - cloud
+  - aws
+---
 
 Cloud Computing
     - Network of remote servers

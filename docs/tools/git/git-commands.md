@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - tools
+  - git
+---
+
 # GIT COMMANDS SHEET
 
 > **Git =** Version control system for tracking code changes.

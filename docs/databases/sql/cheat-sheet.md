@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - databases
+  - sql
+---
+
 # SQL Cheat Sheet
 
 ## Command groups
@@ -120,3 +127,9 @@ ACID: Atomic · Consistent · Isolated · Durable.
 ```text
 FROM → JOIN → WHERE → GROUP BY → HAVING → SELECT → DISTINCT → ORDER BY → LIMIT
 ```
+
+## Related
+
+- [PostgreSQL](../psql/cheat-sheet.md)
+- [MongoDB](../mongodb/cheat-sheet.md)
+- [Backend](../../fullstack/backend/cheat-sheet.md)

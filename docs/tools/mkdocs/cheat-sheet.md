@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - tools
+  - mkdocs
+---
+
 # MkDocs Cheat Sheet
 
 ## Commands
@@ -24,9 +31,10 @@ mkdocs --version
 ## Add a page
 
 ```bash
-touch docs/section/topic.md          # 1. create, add "# Title"
+touch docs/section/topic.md          # 1. create: tags front matter + "# Title"
 # 2. add to nav in mkdocs.yml
-mkdocs build --strict                # 3. verify
+# 3. new tag? add to tags_allowed
+mkdocs build --strict                # 4. verify
 ```
 
 ```yaml
@@ -66,4 +74,12 @@ Full syntax: [Format guide](mkdocs-format-guide.md). Live render: [Format demo](
 | `not included in the "nav"` | Add page to `nav` |
 | `... which is not found` | Wrong path in `nav` |
 | `no such anchor` | Fix `#heading` slug |
+| `Tags not in allow list: x` | Fix typo or add tag to `tags_allowed` |
 | `Address already in use` | Other `mkdocs serve` running |
+
+## Related
+
+- [Setup guide](mkdocs-setup-guide.md)
+- [Format demo](format-demo.md)
+- [Conventions](conventions.md)
+- [Git](../git/cheat-sheet.md)

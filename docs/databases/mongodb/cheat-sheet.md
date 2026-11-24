@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - databases
+  - mongodb
+---
+
 # MongoDB Cheat Sheet
 
 ## Terms
@@ -91,3 +98,9 @@ mongorestore --db mydb ./backup/mydb
 mongoexport --db mydb --collection users --out users.json
 mongoimport --db mydb --collection users --file users.json
 ```
+
+## Related
+
+- [SQL](../sql/cheat-sheet.md)
+- [PostgreSQL](../psql/cheat-sheet.md)
+- [SQL vs NoSQL](../index.md)

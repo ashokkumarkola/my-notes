@@ -1,3 +1,12 @@
+---
+tags:
+  - cheat-sheet
+  - frameworks
+  - fastapi
+  - python
+  - backend
+---
+
 # FastAPI Cheat Sheet
 
 ## Setup + run
@@ -119,3 +128,9 @@ from fastapi.testclient import TestClient
 client = TestClient(app)
 assert client.get("/").status_code == 200
 ```
+
+## Related
+
+- [Python](../../languages/python/cheat-sheet.md)
+- [Backend](../../fullstack/backend/cheat-sheet.md)
+- [PostgreSQL](../../databases/psql/cheat-sheet.md)

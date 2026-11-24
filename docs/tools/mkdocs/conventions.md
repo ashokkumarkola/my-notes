@@ -1,3 +1,10 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 # Conventions
 
 Rules that keep this knowledge base consistent. Check before adding or moving files.
@@ -45,7 +52,7 @@ tools/        git, figma, mkdocs
 
 - Every folder has `index.md`. Every topic has `cheat-sheet.md`.
 - Max depth: 3 levels under `docs/`. Deeper = hard to navigate.
-- New topic folder → create `index.md` + `cheat-sheet.md` → add both to `nav`.
+- New topic folder → create `index.md` + `cheat-sheet.md` → add topic tag to `tags_allowed` → add both to `nav`.
 - New category = new top tab. Add only when at least 1 real topic exists.
 - Topic file > ~300 lines or many independent subtopics → split into files in same folder.
 
@@ -64,6 +71,47 @@ tools/        git, figma, mkdocs
 - Start from a [template](note-template.md).
 - Headings in order: `##` → `###` → `####`. No skipped levels.
 - Commands always in fenced blocks with a language.
+
+## Tags
+
+Front matter at very top of page:
+
+```yaml
+---
+tags:
+  - cheat-sheet      # 1 page type
+  - databases        # 1 category = docs/ folder
+  - postgresql       # 1+ topic
+  - sql              # optional cross-topic
+---
+```
+
+| Kind | Allowed |
+|---|---|
+| Page type (exactly 1) | `cheat-sheet` · `notes` · `guide` · `roadmap` · `prompt` |
+| Category (exactly 1) | `cloud` · `languages` · `frameworks` · `databases` · `fullstack` · `os` · `ide` · `genai` · `tools` |
+| Topic (1–3) | `aws` `azure` `python` `javascript` `java` `react` `fastapi` `sql` `postgresql` `mongodb` `backend` `frontend` `ubuntu` `windows` `vscode` `langchain` `git` `figma` `mkdocs` |
+
+Rules:
+
+- Lowercase, hyphens. 2–5 tags per page.
+- `index.md` pages: no tags (link lists only).
+- Only tags in `tags_allowed` (`mkdocs.yml`). Typo → build error.
+- New topic folder → add its topic tag to `tags_allowed` + this table.
+- Browse all: [Tags](../../tags.md).
+
+## Related links
+
+End every cheat sheet and note with:
+
+```markdown
+## Related
+
+- [Sibling topic](../sibling/cheat-sheet.md)
+- [Cross-category topic](../../category/topic/cheat-sheet.md)
+```
+
+2–4 links: siblings first, then cross-category (FastAPI ↔ Python ↔ Backend).
 
 ## Links
 

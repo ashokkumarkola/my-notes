@@ -1,3 +1,10 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 # MkDocs Setup Guide
 
 Step-by-step setup of this knowledge base with MkDocs + Material for MkDocs, hosted on GitHub Pages.
@@ -33,7 +40,7 @@ Related guides:
 | 3 | Configure `mkdocs.yml` | Tabs, sidebar, theme, search | Done |
 | 4 | Markdown extensions | Code, callouts, Mermaid | Done |
 | 5 | Homepage + about | Landing dashboard | Done |
-| 6 | Content polish | Template, split, tags | To do |
+| 6 | Tags + related links | Tag index, cross-links | Done (content: ongoing) |
 | 7 | Deploy | Live on GitHub Pages | To do |
 | 8 | Extras | Domain, plugins | To do |
 
@@ -608,9 +615,111 @@ git add -A
 git commit -m "docs: add homepage dashboard and about page"
 ```
 
-## Phase 6: Content polish
+## Phase 6: Tags + related links
 
-_To do._
+Goal: find notes across categories. Tag chips on pages, tag index, cross-links.
+Content polish (fill stubs, split big files, references) = ongoing, outside this phase.
+
+### 1. Enable tags plugin with allowed list
+
+```yaml
+plugins:
+  - search
+  - tags:
+      tags_allowed:          # typo → build error
+        - cheat-sheet        # page type
+        - notes
+        - guide
+        - cloud              # category = docs/ folder
+        - python             # topic = topic folder
+        # ...
+```
+
+Why `tags_allowed`: `pyhton` instead of `python` fails build: `Tags not in allow list: pyhton`. Keeps tags consistent.
+
+### 2. Tag index page `docs/tags.md`
+
+```markdown
+# Tags
+
+<!-- material/tags -->
+```
+
+Marker auto-lists every tag + its pages. Add to nav under Home:
+
+```yaml
+nav:
+  - Home:
+      - index.md
+      - About: about.md
+      - Tags: tags.md
+```
+
+### 3. Tag pages
+
+Front matter, very top of file:
+
+```yaml
+---
+tags:
+  - cheat-sheet      # 1 page type
+  - databases        # 1 category
+  - postgresql       # 1–3 topics
+  - sql
+---
+```
+
+- `index.md` pages: no tags.
+- Full rules: [Conventions → Tags](conventions.md#tags).
+
+### 4. Related links
+
+End of every cheat sheet:
+
+```markdown
+## Related
+
+- [SQL](../sql/cheat-sheet.md)
+- [Backend](../../fullstack/backend/cheat-sheet.md)
+```
+
+Siblings first, then cross-category.
+
+### 5. Templates
+
+Add `tags` front matter + `## Related` to every skeleton in [Note templates](note-template.md).
+
+### 6. Check
+
+```bash
+mkdocs serve
+mkdocs build --strict
+```
+
+| Check | Expected |
+|---|---|
+| Tagged page top | Tag chips |
+| Click chip | Opens Tags page at that tag |
+| Tags page | Every tag + pages |
+| Bottom of cheat sheet | Related links work |
+| Fake tag `pyhton` | Build error |
+
+### 7. Commit
+
+```bash
+git add -A
+git commit -m "docs: add tags plugin, tag index, related links"
+```
+
+### Add new topic (updated flow)
+
+```bash
+mkdir -p docs/<category>/<topic>
+# 1. index.md + cheat-sheet.md (tags front matter + ## Related)
+# 2. add topic tag to tags_allowed in mkdocs.yml
+# 3. add pages to nav
+mkdocs build --strict
+```
 
 ## Phase 7: Deploy to GitHub Pages
 

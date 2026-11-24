@@ -89,6 +89,44 @@ markdown_extensions:
 # ---------- Plugins ----------
 plugins:
   - search
+  - tags:
+      tags_allowed:
+        # page type
+        - cheat-sheet
+        - notes
+        - guide
+        - roadmap
+        - prompt
+        # category (one per docs/ folder)
+        - cloud
+        - languages
+        - frameworks
+        - databases
+        - fullstack
+        - os
+        - ide
+        - genai
+        - tools
+        # topic (one per topic folder)
+        - aws
+        - azure
+        - python
+        - javascript
+        - java
+        - react
+        - fastapi
+        - sql
+        - postgresql
+        - mongodb
+        - backend
+        - frontend
+        - ubuntu
+        - windows
+        - vscode
+        - langchain
+        - git
+        - figma
+        - mkdocs
 
 # ---------- Extra ----------
 extra:
@@ -109,6 +147,7 @@ nav:
   - Home:
       - index.md
       - About: about.md
+      - Tags: tags.md
   - Cloud:
       - cloud/index.md
       - Cheat Sheet: cloud/cheat-sheet.md

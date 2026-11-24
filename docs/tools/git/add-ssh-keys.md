@@ -1,3 +1,10 @@
+---
+tags:
+  - guide
+  - tools
+  - git
+---
+
 # Git — Work + Personal Accounts on Ubuntu
 
 ## Goal

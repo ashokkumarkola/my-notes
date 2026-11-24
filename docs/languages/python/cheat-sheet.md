@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - languages
+  - python
+---
+
 # Python Cheat Sheet
 
 ## Setup
@@ -135,3 +142,9 @@ if __name__ == "__main__":
 | `subprocess` | Run shell commands |
 | `asyncio` | Async I/O |
 | `re` | Regex |
+
+## Related
+
+- [FastAPI](../../frameworks/fastapi/cheat-sheet.md)
+- [LangChain](../../genai/langchain/cheat-sheet.md)
+- [Java](../java/cheat-sheet.md)

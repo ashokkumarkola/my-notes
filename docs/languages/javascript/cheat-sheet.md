@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - languages
+  - javascript
+---
+
 # JavaScript Cheat Sheet
 
 ## Run
@@ -99,3 +106,9 @@ Node ESM: `"type": "module"` in `package.json`.
 ## Truthy / falsy
 
 Falsy: `false` `0` `""` `null` `undefined` `NaN`. Everything else truthy (incl. `[]`, `{}`).
+
+## Related
+
+- [React](../../frameworks/react/cheat-sheet.md)
+- [Frontend](../../fullstack/frontend/cheat-sheet.md)
+- [Python](../python/cheat-sheet.md)

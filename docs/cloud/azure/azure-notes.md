@@ -1,3 +1,10 @@
+---
+tags:
+  - notes
+  - cloud
+  - azure
+---
+
 MS AZURE
 
 Intro to Cloud

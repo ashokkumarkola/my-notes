@@ -1,3 +1,10 @@
+---
+tags:
+  - notes
+  - os
+  - ubuntu
+---
+
 # Ubuntu Terminal
 
 ```bash

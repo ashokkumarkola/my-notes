@@ -1,3 +1,11 @@
+---
+tags:
+  - cheat-sheet
+  - fullstack
+  - frontend
+  - javascript
+---
+
 # Frontend Cheat Sheet
 
 ## HTML skeleton
@@ -86,3 +94,9 @@ npm create vite@latest my-app -- --template react
 | Build tool | Vite |
 | Styling | Tailwind CSS, CSS Modules |
 | Types | TypeScript |
+
+## Related
+
+- [React](../../frameworks/react/cheat-sheet.md)
+- [JavaScript](../../languages/javascript/cheat-sheet.md)
+- [VS Code](../../ide/vscode/cheat-sheet.md)

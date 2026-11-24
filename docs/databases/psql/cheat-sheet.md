@@ -1,3 +1,11 @@
+---
+tags:
+  - cheat-sheet
+  - databases
+  - postgresql
+  - sql
+---
+
 # PostgreSQL Cheat Sheet
 
 ## Install / run
@@ -81,3 +89,9 @@ SELECT current_database(), current_user;
 SELECT pg_size_pretty(pg_database_size('mydb'));
 SELECT pid, state, query FROM pg_stat_activity;
 ```
+
+## Related
+
+- [SQL](../sql/cheat-sheet.md)
+- [MongoDB](../mongodb/cheat-sheet.md)
+- [Backend](../../fullstack/backend/cheat-sheet.md)

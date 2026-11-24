@@ -1,3 +1,9 @@
+---
+tags:
+  - cheat-sheet
+  - genai
+---
+
 # GenAI Cheat Sheet
 
 ## Terms
@@ -54,3 +60,9 @@ Examples:    (optional) one sample input → output
 | Actions (search, DB, API) | Tool use / agent |
 | Domain-specific behaviour at scale | Fine-tuning |
 | Structured data out | JSON schema / structured output |
+
+## Related
+
+- [LangChain](langchain/cheat-sheet.md)
+- [Prompts](prompts/index.md)
+- [Python](../languages/python/cheat-sheet.md)

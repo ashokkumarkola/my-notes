@@ -1,3 +1,11 @@
+---
+tags:
+  - cheat-sheet
+  - fullstack
+  - backend
+  - sql
+---
+
 # Backend Cheat Sheet
 
 ## HTTP methods
@@ -96,3 +104,10 @@ CREATE INDEX idx_users_email ON users(email);
 | Cache | Redis |
 | Queue | RabbitMQ, Kafka, SQS |
 | Container | Docker |
+
+## Related
+
+- [FastAPI](../../frameworks/fastapi/cheat-sheet.md)
+- [SQL](../../databases/sql/cheat-sheet.md)
+- [PostgreSQL](../../databases/psql/cheat-sheet.md)
+- [Backend roadmap](backend-roadmap.md)

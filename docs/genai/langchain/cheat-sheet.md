@@ -1,3 +1,11 @@
+---
+tags:
+  - cheat-sheet
+  - genai
+  - langchain
+  - python
+---
+
 # LangChain Cheat Sheet
 
 API changes fast. Check docs for current imports.
@@ -101,3 +109,9 @@ model_with_tools = model.bind_tools([get_weather])
 msg = model_with_tools.invoke("Weather in Chennai?")
 msg.tool_calls          # model's requested calls
 ```
+
+## Related
+
+- [GenAI cheat sheet](../cheat-sheet.md)
+- [Python](../../languages/python/cheat-sheet.md)
+- [FastAPI](../../frameworks/fastapi/cheat-sheet.md)

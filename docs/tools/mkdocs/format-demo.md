@@ -1,3 +1,10 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 # Format Demo
 
 Live render of every format. Syntax: [Format guide](mkdocs-format-guide.md). Open source file side by side to compare.

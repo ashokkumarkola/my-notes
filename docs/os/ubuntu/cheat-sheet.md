@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - os
+  - ubuntu
+---
+
 # Ubuntu Cheat Sheet
 
 ## Navigation + files
@@ -124,3 +131,10 @@ nano ~/.bashrc; source ~/.bashrc   # persist
 | `Ctrl+U` | Delete to line start |
 | `Tab` | Autocomplete |
 | `!!` | Repeat last command |
+
+## Related
+
+- [OS command map](../cheat-sheet.md)
+- [Windows](../windows/cheat-sheet.md)
+- [Terminal notes](terminal.md)
+- [Git](../../tools/git/cheat-sheet.md)

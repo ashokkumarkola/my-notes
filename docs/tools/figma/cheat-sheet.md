@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - tools
+  - figma
+---
+
 # Figma Cheat Sheet
 
 Shortcuts for Windows/Linux. macOS: `Ctrl` → `Cmd`, `Alt` → `Option`.
@@ -60,3 +67,8 @@ Shortcuts for Windows/Linux. macOS: `Ctrl` → `Cmd`, `Alt` → `Option`.
 - Use auto layout for responsive components.
 - Use variables/styles, not raw hex values.
 - Export icons as SVG, photos as PNG/JPG.
+
+## Related
+
+- [Frontend](../../fullstack/frontend/cheat-sheet.md)
+- [React](../../frameworks/react/cheat-sheet.md)

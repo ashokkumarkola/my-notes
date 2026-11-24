@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - os
+  - windows
+---
+
 # Windows Cheat Sheet
 
 CMD = `cmd.exe`. PowerShell = `pwsh` / `powershell`. Prefer PowerShell.
@@ -103,3 +110,9 @@ Set-ExecutionPolicy -Scope CurrentUser RemoteSigned   # allow local scripts
 | `Win+E` | File Explorer |
 | `Win+V` | Clipboard history |
 | `Win+Shift+S` | Screenshot |
+
+## Related
+
+- [OS command map](../cheat-sheet.md)
+- [Ubuntu](../ubuntu/cheat-sheet.md)
+- [VS Code](../../ide/vscode/cheat-sheet.md)

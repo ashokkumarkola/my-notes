@@ -1,3 +1,11 @@
+---
+tags:
+  - cheat-sheet
+  - os
+  - ubuntu
+  - windows
+---
+
 # OS Cheat Sheet
 
 Same task across shells.
@@ -25,3 +33,9 @@ Same task across shells.
 | Ports | `ss -tulpn` | `netstat -ano` | `Get-NetTCPConnection` |
 | Install pkg | `sudo apt install x` | `winget install x` | `winget install x` |
 | Path separator | `/` | `\` | `\` (also `/`) |
+
+## Related
+
+- [Ubuntu](ubuntu/cheat-sheet.md)
+- [Windows](windows/cheat-sheet.md)
+- [Git](../tools/git/cheat-sheet.md)

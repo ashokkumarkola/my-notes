@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - tools
+  - git
+---
+
 # Git Cheat Sheet
 
 Full reference: [Commands](git-commands.md).
@@ -98,3 +105,9 @@ git tag
 git mv old.md new.md            # keeps history
 git log --follow new.md
 ```
+
+## Related
+
+- [Git commands (full)](git-commands.md)
+- [SSH keys](add-ssh-keys.md)
+- [VS Code](../../ide/vscode/cheat-sheet.md)

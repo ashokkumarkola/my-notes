@@ -1,3 +1,10 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 # mkdocs.yml Reference
 
 Every `mkdocs.yml` key used in this site, one line each. Status: **Active** = in config now, **Phase N** = added in that phase.
@@ -150,7 +157,7 @@ Listing `plugins:` replaces defaults. Always include `search` again.
 | Plugin | Purpose | Package | Status |
 |---|---|---|---|
 | `search` | Full-text search | built-in | Active |
-| `tags` | Tag index pages | built into Material | Phase 6 |
+| `tags` | Tag chips + index page; `tags_allowed` rejects typos | built into Material | Active |
 | `offline` | Site works from file system | built into Material | Phase 8 |
 | `git-revision-date-localized` | "Last updated" date | `mkdocs-git-revision-date-localized-plugin` | Phase 8 |
 | `redirects` | Old URL → new URL after renames | `mkdocs-redirects` | Phase 8 |

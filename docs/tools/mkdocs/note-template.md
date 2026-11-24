@@ -1,6 +1,13 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 # Note Templates
 
-Copy-paste skeletons for new notes. Delete sections that do not fit. Never keep empty headings.
+Copy-paste skeletons for new notes. Delete sections that do not fit. Never keep empty headings. Tags: [Conventions → Tags](conventions.md#tags).
 
 | Template | Use for | Example |
 |---|---|---|
@@ -18,7 +25,9 @@ Syntax for each element: [Format Guide](mkdocs-format-guide.md).
 ````markdown
 ---
 tags:
-  - topic
+  - notes            # page type
+  - <category>       # docs/ folder
+  - <topic>          # topic folder
 ---
 
 # Topic Name
@@ -88,6 +97,13 @@ Short explanation of the flow.
 ## 2. Command cheat sheet
 
 ````markdown
+---
+tags:
+  - cheat-sheet
+  - <category>
+  - <topic>
+---
+
 # Tool Commands
 
 One-line summary of the tool.
@@ -121,6 +137,10 @@ tool advanced --flag   # when to use
 !!! danger
     `tool destroy` deletes data permanently. Back up first.
 
+## Related
+
+- [Sibling topic](../sibling/cheat-sheet.md)
+
 ## References
 
 - [Official docs](https://...)
@@ -131,6 +151,13 @@ tool advanced --flag   # when to use
 ## 3. How-to guide
 
 ````markdown
+---
+tags:
+  - guide
+  - <category>
+  - <topic>
+---
+
 # How to Do X
 
 Goal: end state in one line.
@@ -173,6 +200,10 @@ check-command      # expected output: ...
 ```bash
 undo-command
 ```
+
+## Related
+
+- [Related note](../other/note.md)
 ````
 
 ---
@@ -180,6 +211,7 @@ undo-command
 ## 4. Section index
 
 ````markdown
+<!-- index pages: no tags -->
 # Section Name
 
 One-line description of what this section covers.

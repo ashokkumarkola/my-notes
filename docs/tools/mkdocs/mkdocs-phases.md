@@ -1,3 +1,10 @@
+---
+tags:
+  - guide
+  - tools
+  - mkdocs
+---
+
 **Phases**
 
 0. **Safety checkpoint.** Commit or stash the current uncommitted work, so each phase has a clean diff to review or roll back.

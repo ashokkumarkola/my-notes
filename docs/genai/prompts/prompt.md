@@ -1,3 +1,9 @@
+---
+tags:
+  - prompt
+  - genai
+---
+
 ## Task
 
 Review, improve, refactor, and enhance the `MasterLidoMappingManagement` page to bring it to a **production-grade standard** suitable for a real-world enterprise application.

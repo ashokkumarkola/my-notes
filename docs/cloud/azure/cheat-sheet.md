@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - cloud
+  - azure
+---
+
 # Azure Cheat Sheet
 
 ## Hierarchy
@@ -76,3 +83,9 @@ az keyvault secret show --vault-name kv1 -n db-pass --query value -o tsv
 -o table | json | tsv
 --query "[].name"               # JMESPath filter
 ```
+
+## Related
+
+- [AWS cheat sheet](../aws/cheat-sheet.md)
+- [Cloud cheat sheet](../cheat-sheet.md)
+- [Azure notes](azure-notes.md)

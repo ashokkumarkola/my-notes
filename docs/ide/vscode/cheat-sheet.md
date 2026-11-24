@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - ide
+  - vscode
+---
+
 # VS Code Cheat Sheet
 
 Shortcuts for Linux/Windows. macOS: `Ctrl` → `Cmd`, `Alt` → `Option`.
@@ -70,3 +77,9 @@ code --uninstall-extension <publisher.id>
 | Keybindings | `~/.config/Code/User/keybindings.json` |
 | Workspace | `.vscode/settings.json` |
 | Recommended extensions | `.vscode/extensions.json` |
+
+## Related
+
+- [Git](../../tools/git/cheat-sheet.md)
+- [Ubuntu](../../os/ubuntu/cheat-sheet.md)
+- [Extensions](extensions.md)

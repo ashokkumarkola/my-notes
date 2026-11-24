@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - languages
+  - java
+---
+
 # Java Cheat Sheet
 
 ## JDK
@@ -116,3 +123,9 @@ try (var reader = Files.newBufferedReader(path)) { }   // auto close
 | Package | `mvn package` | `./gradlew jar` |
 | Clean | `mvn clean` | `./gradlew clean` |
 | Config | `pom.xml` | `build.gradle` |
+
+## Related
+
+- [Python](../python/cheat-sheet.md)
+- [JavaScript](../javascript/cheat-sheet.md)
+- [SQL](../../databases/sql/cheat-sheet.md)

@@ -24,6 +24,7 @@ mkdocs serve                      # http://127.0.0.1:8000
 docs/
 ├── index.md         homepage dashboard
 ├── about.md         about this site
+├── tags.md          tag index (auto)
 ├── assets/          favicon, shared images
 ├── cloud/           AWS, Azure
 ├── languages/       Python, JavaScript, Java

@@ -1,3 +1,9 @@
+---
+tags:
+  - notes
+  - cloud
+---
+
 # CLOUD
 
 > **Before Cloud**

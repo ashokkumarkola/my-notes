@@ -1,3 +1,10 @@
+---
+tags:
+  - cheat-sheet
+  - cloud
+  - aws
+---
+
 # AWS Cheat Sheet
 
 ## Core services
@@ -86,3 +93,9 @@ aws logs tail /aws/lambda/fn --follow
 --query 'Items[].Name'          # JMESPath filter
 --region us-east-1
 ```
+
+## Related
+
+- [Azure cheat sheet](../azure/cheat-sheet.md)
+- [Cloud cheat sheet](../cheat-sheet.md)
+- [AWS notes](aws-notes.md)

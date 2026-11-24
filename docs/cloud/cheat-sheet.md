@@ -1,3 +1,11 @@
+---
+tags:
+  - cheat-sheet
+  - cloud
+  - aws
+  - azure
+---
+
 # Cloud Cheat Sheet
 
 ## Service models
@@ -54,3 +62,9 @@
 | Queue | SQS | Service Bus / Queue Storage | Pub/Sub |
 | IaC | CloudFormation | ARM / Bicep | Deployment Manager |
 | CLI | `aws` | `az` | `gcloud` |
+
+## Related
+
+- [AWS cheat sheet](aws/cheat-sheet.md)
+- [Azure cheat sheet](azure/cheat-sheet.md)
+- [Cloud concepts](cloud-concepts.md)
