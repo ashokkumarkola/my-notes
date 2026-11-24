@@ -22,7 +22,9 @@ mkdocs serve                      # http://127.0.0.1:8000
 
 ```text
 docs/
-├── index.md         homepage
+├── index.md         homepage dashboard
+├── about.md         about this site
+├── assets/          favicon, shared images
 ├── cloud/           AWS, Azure
 ├── languages/       Python, JavaScript, Java
 ├── frameworks/      React, FastAPI

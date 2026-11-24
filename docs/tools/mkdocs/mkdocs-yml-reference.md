@@ -66,8 +66,8 @@ Paths are relative to `docs_dir`. Every path must exist.
 | `theme.language` | UI language, e.g. `en` | Active |
 | `theme.palette` | Colors, light/dark toggle | Active |
 | `theme.font.text` / `.code` | Google Fonts names, or `false` to disable | Active |
-| `theme.logo` / `theme.icon.logo` | Header logo image or icon | Phase 5 |
-| `theme.favicon` | Browser tab icon | Phase 5 |
+| `theme.logo` / `theme.icon.logo` | Header logo image or icon | Active |
+| `theme.favicon` | Browser tab icon | Active |
 | `theme.icon.repo` | Repo icon in header | Phase 7 |
 | `theme.features` | UI behaviours, see below | Active |
 
@@ -161,7 +161,7 @@ Plugins with own package → add to `requirements.txt`.
 
 | Key | Purpose | Status |
 |---|---|---|
-| `extra.social` | Footer social icons + links | Phase 5 |
+| `extra.social` | Footer social icons + links | Active |
 | `extra.generator` | `false` hides "Made with Material" | Optional |
 | `extra_css` | Custom CSS files under `docs/` | Phase 8 |
 | `extra_javascript` | Custom JS files under `docs/` | As needed |

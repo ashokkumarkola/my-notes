@@ -32,7 +32,7 @@ Related guides:
 | 2 | Restructure notes | Lowercase paths, all `.md` | Done |
 | 3 | Configure `mkdocs.yml` | Tabs, sidebar, theme, search | Done |
 | 4 | Markdown extensions | Code, callouts, Mermaid | Done |
-| 5 | Homepage + about | Landing dashboard | To do |
+| 5 | Homepage + about | Landing dashboard | Done |
 | 6 | Content polish | Template, split, tags | To do |
 | 7 | Deploy | Live on GitHub Pages | To do |
 | 8 | Extras | Domain, plugins | To do |
@@ -497,7 +497,116 @@ git commit -m "chore: enable markdown extensions and code features"
 
 ## Phase 5: Homepage + about
 
-_To do._
+Goal: homepage = dashboard, one click to every category. About page explains site.
+
+### 1. Homepage `docs/index.md`
+
+Front matter: full width, no sidebars.
+
+```yaml
+---
+hide:
+  - navigation
+  - toc
+---
+```
+
+Category grid (one card per `docs/` folder):
+
+```markdown
+<div class="grid cards" markdown>
+
+-   :material-cloud-outline:{ .lg .middle } **Cloud**
+
+    ---
+
+    Cloud models, service mapping.
+
+    [AWS](cloud/aws/index.md) · [Azure](cloud/azure/index.md)
+
+    [:octicons-arrow-right-24: Open](cloud/index.md)
+
+</div>
+```
+
+Quick-link buttons:
+
+```markdown
+[:material-git: Git](tools/git/cheat-sheet.md){ .md-button }
+```
+
+Why: `grid cards` + `md_in_html` + `attr_list` + `emoji` (Phase 4) = dashboard with zero CSS.
+Rule: blank line after `<div ... markdown>` and before `</div>`, 4-space indent inside cards.
+
+Find icon names:
+
+```bash
+ls .venv/lib/python3*/site-packages/material/templates/.icons/material/ | grep cloud
+```
+
+### 2. About page `docs/about.md`
+
+Sections: Purpose · Stack · Structure · How notes are written · Contact.
+
+### 3. Branding in `mkdocs.yml`
+
+```yaml
+theme:
+  icon:
+    logo: material/book-open-page-variant   # header logo
+  favicon: assets/favicon.svg               # browser tab icon
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/<user>
+      name: GitHub
+```
+
+Favicon from Material icon, colored:
+
+```bash
+mkdir -p docs/assets
+sed 's/<path /<path fill="#3f51b5" /' \
+  .venv/lib/python3*/site-packages/material/templates/.icons/material/book-open-page-variant.svg \
+  > docs/assets/favicon.svg
+```
+
+Why fill: icon SVGs have no color → invisible on dark browser tabs.
+
+### 4. Nav: About under Home tab
+
+```yaml
+nav:
+  - Home:
+      - index.md
+      - About: about.md
+```
+
+Why: keeps rule one tab per `docs/` folder. Root pages live under Home.
+
+### 5. Check
+
+```bash
+mkdocs serve
+mkdocs build --strict
+```
+
+| Check | Expected |
+|---|---|
+| Homepage | No sidebars, 9 cards, 5 buttons |
+| Card links | Open topic / category |
+| Browser DevTools phone view | Cards stack in 1 column |
+| Light + dark | Cards readable in both |
+| Header | Book logo; tab icon = favicon |
+| Footer | GitHub icon |
+
+### 6. Commit
+
+```bash
+git add -A
+git commit -m "docs: add homepage dashboard and about page"
+```
 
 ## Phase 6: Content polish
 

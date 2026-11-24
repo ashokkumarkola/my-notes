@@ -9,6 +9,9 @@ docs_dir: docs
 theme:
   name: material
   language: en
+  icon:
+    logo: material/book-open-page-variant
+  favicon: assets/favicon.svg
   font:
     text: Roboto
     code: Roboto Mono
@@ -87,6 +90,13 @@ markdown_extensions:
 plugins:
   - search
 
+# ---------- Extra ----------
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ashokkumarkola
+      name: GitHub
+
 # ---------- Validation (strict build catches these) ----------
 validation:
   omitted_files: warn
@@ -96,7 +106,9 @@ validation:
 
 # ---------- Navigation ----------
 nav:
-  - Home: index.md
+  - Home:
+      - index.md
+      - About: about.md
   - Cloud:
       - cloud/index.md
       - Cheat Sheet: cloud/cheat-sheet.md
